@@ -11,3 +11,5 @@ def home(request):
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'post.html', {'post': post})
+def about(request):
+	return render(request, 'about.html')

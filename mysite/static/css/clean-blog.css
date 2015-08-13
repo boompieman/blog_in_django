@@ -393,3 +393,35 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+
+.separation {
+  padding-top: 5%;
+  padding-bottom:5%;
+}
+
+.color_col_1 {
+  background-color: rgb(236, 50, 51);
+  display: block;
+  float: left;
+  height: 5px;
+  line-height: 26px;
+  width: 33%;
+}
+
+.color_col_2 {
+  background-color: rgb(30, 178, 178);
+  display: block;
+  float: left;
+  height: 5px;
+  line-height: 26px;
+  width: 33%;
+}
+
+.color_col_3 {
+  background-color: rgb(224, 224, 224);
+  display: block;
+  float: left;
+  height: 5px;
+  line-height: 26px;
+  width: 33%;
+}

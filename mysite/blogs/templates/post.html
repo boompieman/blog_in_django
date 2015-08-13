@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Man must explore, and this is exploration at its greatest</h1>
-                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                        <h1>黃昏灑落，寒鴉無語，我將在暗橋彼處等你</h1>
+                        <h2 class="subheading">晚風蕭蕭，微雨飄渺，華髮清香在我心頭飄逸</h2>
                     </div>
                 </div>
             </div>
@@ -22,11 +22,16 @@
     <article>
         <div class="container post post-detail">
                 <div class="post-heading">
-                    <h1 class="title col-md-offset-1 col-md-11"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h1>
+                    <h1 class="title"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h1>
+                </div>
+                <div class="separation">
+                    <div class="color_col_1"></div>
+                    <div class="color_col_2"></div>
+                    <div class="color_col_3"></div>
                 </div>
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    {{post.content}}
+                <div class="col-md-12">
+                    {{post.content | safe}}
                 </div>
             </div>
         </div>

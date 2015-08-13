@@ -13,9 +13,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Sam's Blog</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">獻給我想貢獻的小小故事集</span>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,13 @@
                             {{ post.title }}
                         </h2>
                     </a>
+                    <div class="separation">
+                        <div class="color_col_1"></div>
+                        <div class="color_col_2"></div>
+                        <div class="color_col_3"></div>
+                    </div>
                     <p class="post-subtitle">
-                        {{post.content}}
+                        {{post.content|safe|truncatewords_html:10}}
                     </p>
                     <div class="row">
                         <p class="post-meta col-md-10">Posted by Sam Chang</p>

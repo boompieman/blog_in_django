@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render_to_response
 from blogs.models import Post
+from django.http import HttpResponse
 
 def home(request):
     post_list = Post.objects.all()
@@ -11,5 +12,6 @@ def home(request):
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'post.html', {'post': post})
+
 def about(request):
 	return render(request, 'about.html')

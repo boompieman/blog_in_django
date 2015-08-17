@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 """
 Django settings for mysite project.
 
@@ -11,21 +12,25 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 from .settings import *
+import os
+
 #這個設定將使Django找尋環境參數中的DATABASE_URL並連接其指向的資料庫
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config()
-}
 
 #設定訪問
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -34,8 +39,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'qkq&5qj6b+yukeyg(b&y!+lu%%rk7od-y!iuhg=f86tu7mce)f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -52,7 +57,6 @@ INSTALLED_APPS = (
     'bootstrap3',
     'blogs',
 )
-
 
 
 MIDDLEWARE_CLASSES = (
@@ -111,11 +115,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
-    ("css", os.path.join(STATIC_ROOT,'css')),
-    ("js", os.path.join(STATIC_ROOT,'js')),
-    ("images", os.path.join(STATIC_ROOT,'images')),
-    ("less"), os.path.join(STATIC_ROOT, 'less')
+    os.path.join(BASE_DIR, "../common_static"),
 )
+

@@ -1,0 +1,5 @@
+venv
+*.pyc
+__pycache__
+common_static
+db.sqlite3

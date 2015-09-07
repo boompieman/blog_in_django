@@ -8,13 +8,12 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
+## mysite/wsgi.py
+
 import os
-
-from django.core.wsgi import get_wsgi_application
-from dj_static import Cling
-
-#使dj_static將會從static_url來的訪問導致static_root中抓取靜態檔案
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
+from django.core.wsgi import get_wsgi_application
+
+from dj_static import Cling
 application = Cling(get_wsgi_application())
